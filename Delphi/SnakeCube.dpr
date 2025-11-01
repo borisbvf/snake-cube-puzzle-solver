@@ -2,8 +2,6 @@ program SnakeCube;
 
 {$APPTYPE CONSOLE}
 
-{$R *.res}
-
 uses
   System.SysUtils, System.Generics.Collections, DateUtils;
 
@@ -162,7 +160,7 @@ begin
       Res := FindSolution(StartPoint, 0, 1, 0);
 
       Finish := Now;
-      Writeln(Format('Finding a solution took %0:d seconds.', [SecondsBetween(Start, Finish)]));
+      Writeln(Format('Finding a solution took %0:f seconds.', [MilliSecondsBetween(Start, Finish) / 1000]));
 
       // Show a solution
       for Move in Path do
